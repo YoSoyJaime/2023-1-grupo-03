@@ -12,10 +12,10 @@ class PublicationsController < ApplicationController
     end
 
     def create
-        @publication = Publication.new(publication_params)
+        @user = User.find(params[:user_id])
+        @publication = @user.publication.create(publication_params)
         if @publication.save
             redirect_to @publication
-            
         else
             render :new, status: :unprocessable_entity    
         end
@@ -25,6 +25,7 @@ class PublicationsController < ApplicationController
     end
 
     def update
+        @user = User.find(params[:user_id])
         @publication = Publication.find(params[:id])
         if @publication.update(publication_params)
             redirect_to @publication
@@ -38,4 +39,9 @@ class PublicationsController < ApplicationController
         @publication.destroy
 
         redirect_to :publications, status: :see_other
+    
+    private
+    def publication_params
+        params.require(:publication).permit(:likes_number, :contents, :duration, :modality, :price)
+    end
 end
