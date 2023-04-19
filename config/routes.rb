@@ -7,5 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "render#index"
+  #get "/users/:user_id/publications", to: "publications#index"
+  #post "/users/:user_id/publications", to: "publications#create"
+  #get "/users/:user_id/publications/new", to: "publications#new"
+  #get "/users/:user_id/publications/:id/edit", to: "publications#edit"
+  #get "/users/:user_id/publications/:id", to: "publications#show"
+  #patch "/users/:user_id/publications/:id", "publications#update"
+  #put "/users/:user_id/publications/:id", "publications#update"
+  #delete "/users/:user_id/publications/:id", "publications#destroy"
   resources :publications 
 end
