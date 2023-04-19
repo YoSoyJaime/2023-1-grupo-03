@@ -19,7 +19,7 @@ class PublicationsController < ApplicationController
         else
             render :new, status: :unprocessable_entity    
         end
-    
+    end
     def edit
         @publication = Publication.find(params[:id])
     end
