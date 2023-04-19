@@ -8,7 +8,7 @@ class PublicationTest < ActiveSupport::TestCase
     publication = @publication(:publication1)
     result = @publication.save
     assert_not result, "Saved an publication without a title"
-    end
+  end
   
     
     
