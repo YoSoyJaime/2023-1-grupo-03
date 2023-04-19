@@ -39,7 +39,7 @@ class PublicationsController < ApplicationController
         @publication.destroy
 
         redirect_to :publications, status: :see_other
-    
+    end
     private
     def publication_params
         params.require(:publication).permit(:likes_number, :contents, :duration, :modality, :price)
