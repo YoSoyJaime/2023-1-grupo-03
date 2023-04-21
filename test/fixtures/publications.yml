@@ -8,9 +8,3 @@ publication1:
   description: Hola como estas
   price: 1
 
-two:
-  likes_number: 1
-  contents: MyString
-  duration: MyString
-  modality: MyString
-  price: 1
