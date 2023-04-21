@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RenderProyecto</title>
+    <title>4SBS</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,14 +11,33 @@
   </head>
 
   <body>
+
+  
     
     <% if user_signed_in? %>
       <p>Logged in as <%= current_user.name %></p>
       <%= link_to "Edit", edit_user_registration_path %>
       <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
+
+    <% elsif controller_name != 'registrations' && controller_name != 'sessions' %>
+
+      
+      
+
+        <%= yield %>
+        
+        <button><%= link_to "Iniciar sesión", new_user_session_path %> </button> <br />
+        <button><%= link_to "Crear cuenta", new_user_registration_path %> </button> 
+
+    <% elsif controller_name != 'sessions' %>
+
+        <button><%= link_to "Iniciar sesión", new_user_session_path %> </button> <br /> 
+
+      <% else controller_name != 'registrations' %>
+      <button><%= link_to "Crear cuenta", new_user_registration_path %> </button> 
+      
+
+      
     <% end %>
 
     <% if flash[:notice] %>
@@ -29,6 +48,9 @@
       <p class="alert"><%= flash[:alert] %></p>
     <% end %>
 
-    <%= yield %>
+    
+
+
+    
   </body>
 </html>
