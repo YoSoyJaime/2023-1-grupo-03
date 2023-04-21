@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   patch "/users/:user_id/publications/:id", to: "publications#update"
   put "/users/:user_id/publications/:id", to: "publications#update"
   delete "/users/:user_id/publications/:id", to: "publications#destroy"
+
+  resources :courses
 end
