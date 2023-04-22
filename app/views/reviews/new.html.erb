@@ -1,0 +1,18 @@
+<h1> New Review </h1>
+<%= form_for @review do |form| %>
+<div>
+    <%= form.label :feedback %>
+    <%= form.text_field :feedback %>
+    <% @review.errors.full_messages_for(:feedback).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+    <%= form.label :score %>
+    <%= form.number_field :score %>
+    <% @review.errors.full_messages_for(:score).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+</div>
+<%= form.submit %>
+<% end %>

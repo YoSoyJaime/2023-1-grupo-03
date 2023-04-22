@@ -9,6 +9,9 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
     end
 
+    def new
+        @review  = Review.new
+    end
 
     def create
         @review = Review.new(review_params)
@@ -17,8 +20,12 @@ class ReviewsController < ApplicationController
     else
         render 'new', status: :unprocessable_entity
     end
+    end
 
-
+    def edit
+        @article = Article.find(params[:id])
+    end
+    
 
     def update
         @review = Review.find(params[:id])
@@ -39,7 +46,5 @@ class ReviewsController < ApplicationController
     def review_params
         params.require(:review).permit(:feedback, :score)
     end
-
-
 
 end
