@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, 
                    path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
-  get 'render/index'
+ 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+  get 'render/publications'
   root "render#index"
   get "/users/:user_id/publications", to: "publications#index"
   post "/users/:user_id/publications", to: "publications#create"
