@@ -1,10 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @request %>
+<h3 class="display-4 bg-info-subtle"> 
+ 
+  <%= render @request %>
 
 <div>
-  <%= link_to "Edit this request", edit_request_path(@request) %> |
-  <%= link_to "Back to requests", requests_path %>
-
-  <%= button_to "Destroy this request", @request, method: :delete %>
+  <br/>
+  
+  <%= link_to "Edit this request", edit_request_path(@request), class:"btn btn-primary" %> |
+  <%= link_to "Back to requests", requests_path , class:"btn btn-primary"%>
+  <br/>
+  <br/>
+  
+  <%= button_to "Destroy this request", @request, method: :delete , class:"btn btn-danger"%>
 </div>
+
+
+</h3>

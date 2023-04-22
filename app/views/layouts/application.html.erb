@@ -16,48 +16,28 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+
+
   <body>
     <%= render 'render/header'  %>
     <br/>
     <br/>
   
     
-    <% if user_signed_in? %>
+      <% if user_signed_in? %>
       <p>Logged in as <%= current_user.name %></p>
-      <%= link_to "Edit", edit_user_registration_path %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-
-    <% elsif controller_name != 'registrations' && controller_name != 'sessions' %>
-
       
-      
-
-        <%= yield %>
-        
-        <button><%= link_to "Iniciar sesión", new_user_session_path %> </button> <br />
-        <button><%= link_to "Crear cuenta", new_user_registration_path %> </button> 
-
-    <% elsif controller_name != 'sessions' %>
-
-        <button><%= link_to "Iniciar sesión", new_user_session_path %> </button> <br /> 
-
-      <% else controller_name != 'registrations' %>
-      <button><%= link_to "Crear cuenta", new_user_registration_path %> </button> 
-      
-
+    <% else %>
       
     <% end %>
-
     <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
     <% end %>
-
     <% if flash[:alert] %>
       <p class="alert"><%= flash[:alert] %></p>
     <% end %>
-
-      
-    
+        
+    <%= yield %>
 
 
 

@@ -10,23 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+  <br/>
+  <div class="mb-3">
     <%= form.label :user_emit_id, style: "display: block" %>
-    <%= form.number_field :user_emit_id %>
+    <%= form.number_field :user_emit_id , class:"input-group-text" %>
   </div>
-
-  <div>
+  <br/>
+  <div class=" mb-3">
     <%= form.label :user_recive_id, style: "display: block" %>
-    <%= form.number_field :user_recive_id %>
+    <%= form.number_field :user_recive_id , class:"input-group-text" %>
   </div>
-
-  <div>
+  <br/>
+  <div class=" mb-3">
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.text_field :status , class:"input-group-text"  %>
   </div>
-
+  <br/>
   <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
