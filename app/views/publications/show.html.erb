@@ -1,0 +1,13 @@
+<p><%= @publication.description %></p>
+<p><%= @publication.contents %></p>
+<p><%= @publication.price %></p>
+<p><%= @publication.duration %></p>
+<p><%= @publication.modality %></p>
+<p><%= @publication.likes_number %></p>
+<ul>
+    <li><%= link_to "Edit", :edit_publication %></li>
+    <li><%= link_to "Destroy", :publications, data: {
+        confirm: "Are you sure you want to delete this publication?",
+        method: :delete
+    } %></li>
+</ul>
