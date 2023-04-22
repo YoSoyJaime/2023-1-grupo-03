@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+  get 'render/requests'
+  get 'render/comments'
   get 'render/publications'
   root "render#index"
   get "/users/:user_id/publications", to: "publications#index"
@@ -18,13 +20,7 @@ Rails.application.routes.draw do
   patch "/users/:user_id/publications/:id", to: "publications#update"
   put "/users/:user_id/publications/:id", to: "publications#update"
   delete "/users/:user_id/publications/:id", to: "publications#destroy"
-<<<<<<< HEAD
 
   resources :courses
-=======
-
-
-  resources :courses
-
->>>>>>> main
+  
 end
