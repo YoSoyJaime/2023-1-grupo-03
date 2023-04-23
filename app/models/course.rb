@@ -1,3 +1,4 @@
 class Course < ApplicationRecord
-    has_many :publications
+    validates :name, presence: true
+    validates :acronym, presence: true
 end
