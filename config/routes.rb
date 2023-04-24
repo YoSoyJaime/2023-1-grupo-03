@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, 
+  devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, 
                    path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
   get 'render/index'
@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   #patch "/users/:user_id/publications/:id", "publications#update"
   #put "/users/:user_id/publications/:id", "publications#update"
   #delete "/users/:user_id/publications/:id", "publications#destroy"
+  match '/users', to: 'users#index', via: 'get'
+  match '/users/:id', to: 'users#show', via: 'get'
+  resources :users, only: [:show] do
+    resources :reviews
+  end
   resources :publications 
-  resources :reviews
+
 end
