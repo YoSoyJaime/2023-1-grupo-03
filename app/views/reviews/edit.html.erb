@@ -1,5 +1,6 @@
+
 <h1>Edit Review</h1>
-<%= form_with model: @review do |form| %>
+<%= form_for [@user_emit_id, @review] do |form|  %>
 <div>
     <%= form.label :feedback %>
     <%= form.text_field :feedback %>
@@ -14,7 +15,5 @@
         <div><%= message %></div>
     <% end %>
 </div>
-<div>
-    <%= form.submit %>
-</div>
+<%= form.submit %>
 <% end %>

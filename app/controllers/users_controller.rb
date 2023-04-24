@@ -10,14 +10,18 @@ class UsersController < ApplicationController
   end
 
 
+  def find_user_receive
+    @user_receive = User.find(params[:id])
+    puts "aca los params primero #{params.inspect}"
+  end
+
+
   private  
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
     #esta función me esta fallando.
-    def find_user_receive
-      @user_receive = User.find(params[:id])
-    end
+    
 
 end

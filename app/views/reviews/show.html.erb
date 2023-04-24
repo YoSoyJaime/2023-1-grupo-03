@@ -3,6 +3,6 @@
 <p><%= @review.score %></p>
 
 <ul>
-    <li><%= link_to 'Edit', :edit_review %></li>
-    <li><%= link_to 'Destroy', :reviews, data: {turbo_method :delete, turbo_confirm: "Are you sure?"} %></li>
+    <li><%= link_to 'Edit', edit_user_review_path(review.user_receive_id, review) %></li>
+    <li><%= link_to 'Destroy', user_reviews_path(review.user_receive_id, review), data: {turbo_method :delete, turbo_confirm: "Are you sure?"} %></li>
 </ul>   

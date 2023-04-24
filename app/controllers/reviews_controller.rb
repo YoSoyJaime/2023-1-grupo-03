@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_user_receive
     before_action :find_review, only: [:edit, :update, :destroy]
 
@@ -21,7 +22,7 @@ class ReviewsController < ApplicationController
         @review.user_receive_id = @user_receive.id
         @review.user_emit_id = current_user.id
         if @review.save
-            redirect_to user_receive_path(@user_receive)
+            redirect_to user_reviews_path(@user_receive)
         else
             render :new, status: :unprocessable_entity
         end
@@ -48,13 +49,16 @@ class ReviewsController < ApplicationController
         redirect_to :reviews, status: :see_other
     end
     
-    private
+    
     def review_params
-        params.require(:review).permit(:feedback, :score)
+        params.require(:review).permit(:feedback, :score, :user_receive_id, :user_emit_id)
     end
 
     def find_user_receive
-        @user_receive = User.find(params[:user_receive_id])
+        ##ojo acá tengo errores"
+        puts "aca los params #{params.inspect}"
+        puts "aca el current user id #{current_user.id}"
+        @user_receive = User.find(params[:user_id])
     end
 
     def find_review
