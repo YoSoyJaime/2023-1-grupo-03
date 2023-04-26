@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' },
                     path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' } 
   
@@ -6,6 +7,17 @@ Rails.application.routes.draw do
   resources :comments
 
 
+=======
+
+  devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' } 
+
+  resources :requests
+  resources :comments
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, 
+
+                   path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
+>>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,6 +27,7 @@ Rails.application.routes.draw do
   get 'render/comments'
   get 'render/publications'
   root "render#index"
+
   #get "/users/:user_id/publications", to: "publications#index"
   #post "/users/:user_id/publications", to: "publications#create"
   #get "/users/:user_id/publications/new", to: "publications#new"
@@ -30,6 +43,10 @@ Rails.application.routes.draw do
   end
   resources :publications 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
   get "/users/:user_id/publications", to: "publications#index"
   post "/users/:user_id/publications", to: "publications#create"
   get "/users/:user_id/publications/new", to: "publications#new"
@@ -41,4 +58,8 @@ Rails.application.routes.draw do
 
   resources :courses
   
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
 end
