@@ -1,8 +1,26 @@
-<h1><%= @review.feedback %></h1>
 
+#Show a review and its details, also the option to edit or delete it
+
+<h1>Review Show Page</h1>
+
+<p><%= @review.feedback %></p>
 <p><%= @review.score %></p>
+<%= link_to 'Edit', edit_user_review_path(@review.user_receive_id, @review.id) %>
+<%= link_to 'Back', user_reviews_path(@review.user_receive_id) %>
+<%= link_to 'Destroy', user_reviews_path(@review.user_receive_id, @review.id), data: {turbo_method :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
 
-<ul>
-    <li><%= link_to 'Edit', edit_user_review_path(review.user_receive_id, review) %></li>
-    <li><%= link_to 'Destroy', user_reviews_path(review.user_receive_id, review), data: {turbo_method :delete, turbo_confirm: "Are you sure?"} %></li>
-</ul>   
+
+
+
+
+# <h1><%= @review.feedback %></h1>
+
+# <p><%= @review.score %></p>
+
+# <ul>
+#     <li><%= link_to 'Edit', edit_user_review_path(@review.user_receive_id, @review.id) %></li>
+#     <li><%= link_to 'Back', user_reviews_path(@review.user_receive_id) %></li>
+#     <li><%= link_to 'Destroy', user_reviews_path(@review.user_receive_id, @review.id), data: {turbo_method :delete, turbo_confirm: "Are you sure?"} %></li>
+# </ul>   
+# <% end %>

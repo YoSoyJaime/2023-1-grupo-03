@@ -6,11 +6,16 @@ class ReviewsController < ApplicationController
 
     #Leer como hacer el crud de reviews y revisar esto
     def index
-        @reviews = Review.all
+        #@reviews = Review.all
+        @user = User.find(params[:user_id])
+        @reviews = Review.where(user_receive_id: @user.id)
     end
 
     def show
         @review = Review.find(params[:id])
+        puts "acá la review #{@review}"
+        puts " aca el que recibe #{@review.user_receive_id}"
+        puts "acá id que emite #{@review.user_emit_id}"
     end
 
     def new
@@ -29,14 +34,15 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        @review = Review.find(params[:id])
+        @user_emit = current_user
     end
     
 
     def update
-        @review = Review.find(params[:id])
+        @review = Review.find(params[:id])        #review que quiero editar
+        @user_receive = @review.user_receive_id    #quien emite la review
         if @review.update(review_params)
-            redirect_to user_receive_path(@user_receive)
+            redirect_to user_reviews_path(@user_receive)   #redirigir a la lista de reviews de quien ha recibido la review
         else
             render :edit, status: :unprocessable_entity
         end
@@ -55,9 +61,6 @@ class ReviewsController < ApplicationController
     end
 
     def find_user_receive
-        ##ojo acá tengo errores"
-        puts "aca los params #{params.inspect}"
-        puts "aca el current user id #{current_user.id}"
         @user_receive = User.find(params[:user_id])
     end
 
