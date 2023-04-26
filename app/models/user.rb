@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy, foreign_key: "user_receive_id"
   has_many :reviews, dependent: :destroy, foreign_key: "user_emit_id"
 
+  has_many :publications, class_name: "Pubication", dependent: :destroy
 end

@@ -14,6 +14,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_001552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "publication_id"
+    t.integer "user_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "publications", force: :cascade do |t|
     t.integer "likes_number"
     t.string "contents"
@@ -23,6 +31,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_001552) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "user_emit_id"
+    t.integer "user_recive_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

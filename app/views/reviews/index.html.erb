@@ -1,5 +1,5 @@
 
-<h1>Reviews about <%=@user_receive.name%></h1>
+<h1>Reseñas sobre <%=@user_receive.name%></h1>
 
 <ul>
     <% @reviews.each do |review| %> 
@@ -10,9 +10,9 @@
     <% end %>
 </ul>
 
-<%= link_to 'New Review', new_user_review_path(@user) %>
+<%= link_to 'Nueva Reseña', new_user_review_path(@user) %>
 
-<%= link_to 'Back', user_path(@user) %>
+<%= link_to 'Volver', user_path(@user) %>
 
 
 
