@@ -11,13 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_001552) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-<<<<<<< HEAD
-=======
-
 ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
->>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
+
   create_table "comments", force: :cascade do |t|
     t.integer "publication_id"
     t.integer "user_id"
@@ -59,10 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
   create_table "publications", force: :cascade do |t|
     t.integer "likes_number"
     t.string "contents"
@@ -74,16 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
     t.text "description"
   end
 
-<<<<<<< HEAD
-  create_table "requests", force: :cascade do |t|
-    t.integer "user_emit_id"
-    t.integer "user_recive_id"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-=======
->>>>>>> 0519835fb80097269d4fe3d91638a686d3fada3c
 
   create_table "reviews", force: :cascade do |t|
     t.text "feedback"
