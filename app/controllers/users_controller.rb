@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def find_user_receive
     @user_receive = User.find(params[:id])
-    puts "aca los params primero #{params.inspect}"
   end
 
 
@@ -21,7 +20,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    #esta función me esta fallando.
     
 
 end
