@@ -1,0 +1,54 @@
+<h1>New Publication</h1>
+<%= form_with model: @publication do |form| %>
+<div>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+    <% @publication.errors.full_messages_for(:description).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.label :contents %><br>
+    <%= form.text_area :contents %>
+    <% @publication.errors.full_messages_for(:contents).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+    <% @publication.errors.full_messages_for(:price).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.label :duration %><br>
+    <%= form.text_area :duration %>
+    <% @publication.errors.full_messages_for(:duration).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.label :modality %><br>
+    <%= form.text_area :modality %>
+    <% @publication.errors.full_messages_for(:modality).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.label :likes_number %><br>
+    <%= form.text_area :likes_number %>
+    <% @publication.errors.full_messages_for(:likes_number).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+<div>
+    <%= form.submit %>
+</div>
+<% end %>

@@ -42,6 +42,6 @@ class PublicationsController < ApplicationController
     end
     private
     def publication_params
-        params.require(:publication).permit(:likes_number, :contents, :duration, :modality, :price)
+        params.require(:publication).permit(:likes_number, :contents, :duration, :modality, :price, :description)
     end
 end
