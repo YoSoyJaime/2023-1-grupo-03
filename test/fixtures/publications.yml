@@ -1,10 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-publication1:
+one:
   likes_number: 1
-  contents: Es una publicacion
-  duration: 2 semanas
-  modality: Online
-  description: Hola como estas
-  price: 1
+  contents: MyText
+  description: MyText
+  duration: MyString
+  modality: MyString
+  price: MyString
 
+two:
+  likes_number: 1
+  contents: MyText
+  description: MyText
+  duration: MyString
+  modality: MyString
+  price: MyString
