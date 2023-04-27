@@ -12,10 +12,12 @@ class PublicationsController < ApplicationController
     end
 
     def create
-        @user = User.find(params[:user_id])
-        @publication = @user.publication.create(publication_params)
+        @user = current_user
+        puts "params: #{params.inspect}"
+        puts "publications : #{@user.publications}"
+        @publication = @user.publications.new(publication_params) 
         if @publication.save
-            redirect_to @publication
+            redirect_to publications_path
         else
             render :new, status: :unprocessable_entity    
         end
@@ -25,10 +27,10 @@ class PublicationsController < ApplicationController
     end
 
     def update
-        @user = User.find(params[:user_id])
+        @user = current_user
         @publication = Publication.find(params[:id])
         if @publication.update(publication_params)
-            redirect_to @publication
+            redirect_to publications_path
         else
             render :edit, status: :unprocessable_entity
         end
@@ -36,9 +38,10 @@ class PublicationsController < ApplicationController
 
     def destroy
         @publication = Publication.find(params[:id])
+        puts "por aca pasa"
         @publication.destroy
 
-        redirect_to :publications, status: :see_other
+        redirect_to publications_path, status: :see_other
     end
     private
     def publication_params
