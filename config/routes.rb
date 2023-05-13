@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :publications
-=======
   devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' },
                     path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' } 
   
->>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
   resources :requests
   resources :comments
 
@@ -17,12 +14,9 @@ Rails.application.routes.draw do
 
   get 'render/requests'
   get 'render/comments'
-  #get 'render/publications'
+  get 'render/publications'
   root "render#index"
-<<<<<<< HEAD
 
-=======
->>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
 
   #get "/users/:user_id/publications", to: "publications#index"
   #post "/users/:user_id/publications", to: "publications#create"
