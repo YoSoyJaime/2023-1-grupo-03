@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :publications
+=======
+  devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' },
+                    path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' } 
+  
+>>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
   resources :requests
   resources :comments
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, 
-                   path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
 
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -12,10 +17,38 @@ Rails.application.routes.draw do
 
   get 'render/requests'
   get 'render/comments'
-  get 'render/publications'
+  #get 'render/publications'
   root "render#index"
+<<<<<<< HEAD
 
+=======
+>>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
 
+  #get "/users/:user_id/publications", to: "publications#index"
+  #post "/users/:user_id/publications", to: "publications#create"
+  #get "/users/:user_id/publications/new", to: "publications#new"
+  #get "/users/:user_id/publications/:id/edit", to: "publications#edit"
+  #get "/users/:user_id/publications/:id", to: "publications#show"
+  #patch "/users/:user_id/publications/:id", "publications#update"
+  #put "/users/:user_id/publications/:id", "publications#update"
+  #delete "/users/:user_id/publications/:id", "publications#destroy"
+  match '/users', to: 'users#index', via: 'get'
+  match '/users/:id', to: 'users#show', via: 'get'
+  resources :users, only: [:show] do
+    resources :reviews
+  end
+  
+  #resources :publications 
+
+  #get "/users/:user_id/publications", to: "publications#index"
+  #post "/users/:user_id/publications", to: "publications#create"
+  #get "/users/:user_id/publications/new", to: "publications#new"
+  #get "/users/:user_id/publications/:id/edit", to: "publications#edit"
+  #get "/users/:user_id/publications/:id", to: "publications#show"
+  #patch "/users/:user_id/publications/:id", "publications#update"
+  #put "/users/:user_id/publications/:id", "publications#update"
+  #delete "/users/:user_id/publications/:id", "publications#destroy"
+  
   resources :courses
   
 end

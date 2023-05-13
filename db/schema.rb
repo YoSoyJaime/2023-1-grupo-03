@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_001552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "publications", force: :cascade do |t|
     t.integer "user_id"
     t.integer "class_id"
@@ -35,12 +36,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_045139) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
   create_table "requests", force: :cascade do |t|
     t.integer "user_emit_id"
     t.integer "user_recive_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "feedback"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_emit_id"
+    t.integer "user_receive_id"
   end
 
   create_table "users", force: :cascade do |t|

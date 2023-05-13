@@ -1,5 +1,6 @@
 require "test_helper"
 
+<<<<<<< HEAD:test/controllers/publications_controller_test.rb
 class PublicationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @publication = publications(:one)
@@ -45,4 +46,10 @@ class PublicationsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to publications_url
   end
+=======
+class ReviewsControllerTest < ActionDispatch::IntegrationTest
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7:test/controllers/reviews_controller_test.rb
 end
