@@ -22,6 +22,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_001552) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+  create_table "publications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "class_id"
+    t.integer "likes_number"
+    t.string "contents"
+    t.string "description"
+    t.string "duration"
+    t.string "modality"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+=======
+>>>>>>> ea4c21e9d704c366230e3ff3a54108cd0504b0e7
   create_table "requests", force: :cascade do |t|
     t.integer "user_emit_id"
     t.integer "user_recive_id"
