@@ -6,6 +6,7 @@ class PublicationsController < ApplicationController
     @publications = Publication.all
   end
  
+  
   # GET /publications/1 or /publications/1.json
   def show
   end
