@@ -7,10 +7,11 @@
     <br/>
     
     <form>
-      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Mail Universitario</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <%= f.label :Mail_universitario %><br />
+
+        <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
         
       </div>
       <div class="mb-3">
@@ -22,6 +23,7 @@
         <label class="form-check-label" for="exampleCheck1">Recordarme</label>
       </div>
       <button type="submit" class="btn btn-primary">Entrar</button>
+      <% end %>
     </form>
 
 
