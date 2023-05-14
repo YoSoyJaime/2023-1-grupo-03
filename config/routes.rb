@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :publications
   devise_for :users, :path_prefix => 'd', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' },
                     path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' } 
   
