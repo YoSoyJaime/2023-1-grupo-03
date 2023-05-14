@@ -9,6 +9,7 @@ class PublicationsController < ApplicationController
     # GET /publications/1 or /publications/1.json
     def show
     end
+    
   
     # GET /publications/new
     def new
