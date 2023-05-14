@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'render/requests'
   get 'render/comments'
-  get 'render/publications'
+  #get 'render/publications'
   root "render#index"
 
 
@@ -21,16 +21,16 @@ Rails.application.routes.draw do
     resources :reviews
   end
   
-  resources :publications 
+  #resources :publications 
 
-  get "/users/:user_id/publications", to: "publications#index"
-  post "/users/:user_id/publications", to: "publications#create"
-  get "/users/:user_id/publications/new", to: "publications#new"
-  get "/users/:user_id/publications/:id/edit", to: "publications#edit"
-  get "/users/:user_id/publications/:id", to: "publications#show"
-  patch "/users/:user_id/publications/:id", to: "publications#update"
-  put "/users/:user_id/publications/:id", to: "publications#update"
-  delete "/users/:user_id/publications/:id", to: "publications#destroy"
+  #get "/users/:user_id/publications", to: "publications#index"
+  #post "/users/:user_id/publications", to: "publications#create"
+  #get "/users/:user_id/publications/new", to: "publications#new"
+  #get "/users/:user_id/publications/:id/edit", to: "publications#edit"
+  #get "/users/:user_id/publications/:id", to: "publications#show"
+  #patch "/users/:user_id/publications/:id", to: "publications#update"
+  #put "/users/:user_id/publications/:id", to: "publications#update"
+  #delete "/users/:user_id/publications/:id", to: "publications#destroy"
   
   resources :courses
   
